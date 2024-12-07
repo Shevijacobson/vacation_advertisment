@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="x.jpg">
+    <link rel="stylesheet" href="P.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="value_popup" class="stay_popup">
+        <button id="x">x</button>
+        <label>הכנס סיסמת מנהל</label>
+        <input type="password" id="input_password">
+        <label>הכנס שם</label>
+        <input type="text" id="nameManagar">
+        <button type="submit" id="submit"> כניסה</button>
+         <div id="errormessage" class="lll">היי אתה לא מנהל</div>
+        
+    </div>
+
+    <div class="close_body">
+
+        <!--סרגל שנעוץ מורכב מרשימה-->
+        <div id="ruler">
+            <b>shevi&ruty</b>
+            <button id="popup">
+                כניסת מנהלים לפירסום
+                <i class="fa-solid fa-user-lock"></i>
+            </button>
+        </div>
+
+        <!--דיב ובתוכו גלרית תמונות-->
+        <div id="container_gallery"> <img src="x.jpg" alt="" id="gallery">
+
+            <div id="container_i">
+                <button class="fa-solid fa-play" id="next"></button>
+                <button class="fa-solid fa-pause fa-beat" id="pause"></button>
+                <button class="fa-solid fa-play" style="transform: rotate(180deg);" id="prev"></button>
+            </div>
+            <div id="hp_filter_container">
+                <div class="dropdown_container">
+                    <button id="city" class="filter">לאן אתם נוסעים?</button>
+                    <div class="dropdown" id="citys">
+                        <input type="radio" name="city" id="city_a" class="filter_input" value="city_a" />
+                        <label for="city_a" >טבריה</label>
+
+                        <input type="radio" name="city" id="city_b" class="filter_input" value="city_b" />
+                        <label for="city_b">אילת</label>
+
+                        <input type="radio" name="city" id="city_c" class="filter_input" value="city_c" />
+                        <label for="city_c">מירון</label>
+
+                        <input type="radio" name="city" id="city_d" class="filter_input" value="city_d" />
+                        <label for="city_d">ירושלים</label>
+
+                        <input type="radio" name="city" id="city_e" class="filter_input" value="city_e" />
+                        <label for="city_e">דלתון</label>
+
+                        <input type="radio" name="city" id="city_f" class="filter_input" value="city_f" />
+                        <label for="city_f">קיסריה</label>
+                    </div>
+                </div>
+
+                <!--מסנן לפי סוגים-->
+                <div class="dropdown_container">                  
+                     <button id="type" class="filter">איזה נופש אתם בוחרים?</button>             
+                        <div class="dropdown" id="typies">
+                        <input type="radio" name="type" value="type_a" id="type_a" class="filter_input">
+                        <label for="type_a">צימר</label>
+                        <input type="radio" name="type" value="type_b" id="type_b" class="filter_input">
+                        <label for="type_b">מלון</label>
+                        <input type="radio" name="type" value="type_c" id="type_c" class="filter_input">
+                        <label for="type_c">בית הארחה</label>
+                    </div>
+                </div>
+
+                <!--מסנן לפי סוגים-->
+                <div class="dropdown_container">
+                    <button id="price" class="filter">מה התקציב שלכם? </button>
+                    <div class="dropdown" id="prices" >
+                        <input type="radio" name="price" value="price_a" data-min=1000 data-max=1500 id="price_a" class="filter_input">
+                        <label for="price_a">1000-1500</label>
+                        <input type="radio" name="price" value="price_b" data-min=1500 data-max=2000 id="price_b" class="filter_input">
+                        <label for="price_b">1500-2000</label>
+                        <input type="radio" name="price" value="price_c" data-min=2000 data-max=2500 id="price_c" class="filter_input">
+                        <label for="price_c">2000-2500</label>
+                    </div>
+                </div>
+                <input type="text" value="חיפוש" id="search">
+       
+                <input type="text" value="נקה בחירה" id="clear">
+             
+            </div>
+            
+
+        </div>
+        
+        <div id="container_vacation">
+        </div>
+
+        <!-- יוטיוב -->
+    <!-- <h1>לקוחות ממליצים</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4wSZsNOJCLo" frameborder="0"
+        allowfullscreen></iframe> -->
+
+
+    </div>
+    <script  src="P.JS"></script>
+    <script src="j2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="ptwo.css">
+</head>
+
+<body>
+
+  <a href="P.HTML" class="backToHome">חזרה לעמוד הבית</a>
+
+  <p id="user_name"></p>
+
+  <form id="myForm" action="active" method="get" novalidate>
+    <h1>מילוי טופס הוספת מקום האירוח</h1>
+    <div id="c">
+      <div id="fieldToFill">
+
+        <!--בחירת סג-->
+        <label for="">איזה סוג מקום? </label>
+
+        <select name="placeType" id="placeType" class="notnull">
+          <option value="" disabled selected hidden>בחר סוג מקום</option>
+          <option value="type_a">צימר</option>
+          <option value="type_b">מלון</option>
+          <option value="type_c">בית הארחה</option>
+        </select>
+        <span class="placeType"></span>
+
+
+
+        <!--בחירת עיר-->
+        <label for="">באיזה עיר? </label>
+        <select name="city" id="city" class="notnull">
+          <option value="" disabled selected hidden>בחר עיר</option>
+          <option value="ירושלים">ירושלים</option>
+          <option value="טבריה">טבריה</option>
+          <option value="אילת">אילת</option>
+          <option value="מירון">מירון</option>
+          <option value="דלתון">דלתון</option>
+          <option value="קיסריה">קיסריה</option>
+        </select>
+        <span class="city"></span>
+
+ <!---שם הנופש-->
+ <label for="namePlace">שם המקום</label>
+ <input type="text" name="namePlace">
+
+
+        <!-- תיאור-->
+        <label for="description">תיאור</label>
+        <input type="text" name="description">
+
+
+        <!-- תמונה לעמוד הראשי-->
+        <label for="ingmain">הכנס קישור לתמונה</label>
+        <input type="text" name="ingmain">
+
+
+        <!-- מחיר-->
+        <label for="price">מחיר הנופש ללילה</label>
+        <input type="number" name="price" class="notnull" id="price">
+        <span class="price"></span>
+
+       
+        <!-- איקונים -->
+        <h3>אנא סמן במקומות המתאימים</h3>
+        <input type="checkbox" name="AirConditioning">
+        <label for="AirConditioning" class="icon"> מיזוג אויר</label>
+
+        <input type="checkbox" name="accessible">
+        <label for="accessible" class="icon">מקום מונגש </label>
+
+        <input type="checkbox" name="wifi">
+        <label for="wifi" class="icon">wifi </label>
+
+        <input type="checkbox" name="view">
+        <label for="view" class="icon">נוף </label>
+
+        <input type="checkbox" name="pool">
+        <label for="pool" class="icon">בריכה </label>
+
+        <!-- תמונות לגלריה -->
+
+
+        <label for="img1"> הכנס קישור לתמונה 1</label>
+        <input type="text" name="img1">
+        <label for="de_img1"> שם תמונה 1 </label>
+        <input type="text" name="de_img1">
+
+        <label for="img2"> הכנס קישור לתמונה 2 </label>
+        <input type="text" name="img2">
+        <label for="de_img2"> שם תמונה 2 </label>
+        <input type="text" name="de_img2">
+
+        <label for="img3">הכנס קישור לתמונה 3 </label>
+        <input type="text" name="img3">
+        <label for="de_img3"> שם תמונה 3 </label>
+        <input type="text" name="de_img3">
+
+        <label for="img4">הכנס קישור לתמונה 4 </label>
+        <input type="text" name="img4">
+        <label for="de_img4"> שם תמונה 4 </label>
+        <input type="text" name="de_img4">
+
+        <label for="img5">הכנס קישור לתמונה 5</label>
+        <input type="text" name="img5">
+        <label for="de_img5"> שם תמונה 5 </label>
+        <input type="text" name="de_img5">
+
+        <label for="img6">הכנס קישור לתמונה 6 </label>
+        <input type="text" name="img6">
+        <label for="de_img6"> שם תמונה 6 </label>
+        <input type="text" name="de_img6">
+
+
+
+        <h1>פרטים ליצירת קשר</h1>
+        <!-- טלפון-->
+        <label for="tel">טלפון</label>
+        <input type="tel" name="tel" id="phone">
+        <span class="error-message" id="phone-error"></span>
+
+        <!-- מייל-->
+        <label for="email"> מייל </label>
+        <input id="email" type="email" name="email">
+        <span class="error-message" id="email-error"></span>
+
+
+        <button type="submit">שלח</button>
+      </form>
+
+        <script src="addPlace.js"></script>
+    
+
+
+</body>
+
+</html>

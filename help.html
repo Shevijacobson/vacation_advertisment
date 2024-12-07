@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ptwo.css">
+</head>
+<body>
+
+    <a href="P.HTML" class="backToHome">חזרה לעמוד הבית</a>
+
+
+    
+<form  id="myForm" action="active" method="get" novalidate>
+    <h1>מילוי טופס הוספת מקום האירוח</h1>
+    <div id="c"><div id="fieldToFill">
+
+        <!--בחירת סג-->  
+   <label for="">איזה סוג מקום? </label>
+
+   <select name="placeType" id="placeType" data-required>
+    <option value="" disabled selected hidden>בחר סוג מקום</option>
+    <option value="צימר">צימר</option>
+    <option value="מלון">מלון</option>
+    <option value="בית הארחה">בית הארחה</option>
+</select>
+<span class="error"></span>
+
+
+<!--בחירת עיר-->
+<label for="">באיזה עיר? </label>
+<select name="city" id="city" data-required >
+    <option value="" disabled selected hidden>בחר עיר</option>
+    <option value="ירושלים">ירושלים</option>
+    <option value="טבריה">טבריה</option>
+    <option value="אילת">אילת</option>
+    <option value="מירון">מירון</option>
+    <option value="דלתון">דלתון</option>
+    <option value="קיסריה">קיסריה</option>
+</select>
+<span class="error"></span>
+
+<!-- תיאור-->
+<label for="description">תיאור</label>
+<input type="text" name="description" >
+
+<!-- תמונה לעמוד הראשי-->
+<label for="ingmain">הכנס קישור לתמונה</label>
+<input type="text" name="ingmain" >
+
+<!-- מחיר-->
+<label for="price">מחיר הנופש ללילה</label>
+<input type="number" name="price" data-required>
+<span class="error"></span>
+
+<!-- איקונים -->
+<h3>אנא סמן במקומות המתאימים</h3>
+<input type="checkbox" name="AirConditioning">
+<label for="AirConditioning" class="icon"> מיזוג אויר</label>
+
+<input type="checkbox" name="accessible">
+<label for="accessible" class="icon">מקום מותאם לנכים</label>
+
+<input type="checkbox" name="Pool">
+<label for="Pool" class="icon"> בריכה</label>
+
+<input type="checkbox" name="WIFI">
+<label for="WIFI" class="icon"> WIFI</label>
+
+<input type="checkbox" name="AnimalFriendly">
+<label for="AnimalFriendly" class="icon"> חיות מחמד</label>
+
+<input type="checkbox" name="NonSmoking">
+<label for="NonSmoking" class="icon"> אין עישון</label>
+
+<input type="checkbox" name="Parking">
+<label for="Parking" class="icon"> חנייה</label>
+
+<input type="checkbox" name="Garden">
+<label for="Garden" class="icon"> גינה</label>
+
+<input type="checkbox" name="Kitchen">
+<label for="Kitchen" class="icon"> מטבחון</label>
+
+<input type="checkbox" name="Jacuzzi">
+<label for="Jacuzzi" class="icon"> ג'קוזי</label>
+
+<input type="checkbox" name="Balcony">
+<label for="Balcony" class="icon"> מרפסת</label>
+
+<input type="checkbox" name="TV">
+<label for="TV" class="icon"> טלוויזיה</label>
+
+<input type="checkbox" name="Barbecue">
+<label for="Barbecue" class="icon"> מנגל</label>
+<br>
+<br>
+
+<!-- מספר אנשים-->
+<label for="capacity">כמה מבוגרים יכולים לשהות בחדר</label>
+<input type="number" name="capacity" data-required>
+<span class="error"></span>
+
+<!-- פרטי המארח -->
+<h2> פרטי המארח</h2>
+
+<label for="fullname"> שם מלא</label>
+<input type="text" name="fullname" data-required>
+<span class="error"></span>
+
+<label for="email">כתובת מייל</label>
+<input type="email" name="email" data-required>
+<span class="error"></span>
+
+<label for="phone">מספר טלפון</label>
+<input type="tel" name="phone" data-required>
+<span class="error"></span>
+
+<label for="about">ספר על עצמך </label>
+<textarea name="about" id="about" cols="30" rows="5"></textarea>
+
+<button type="submit">שליחה</button>
+</form>
+
+<script>const form = document.getElementById('myForm');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent form submission
+  
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+  
+    const emailIsValid = isValidEmail(email.value);
+    const phoneIsValid = isValidPhone(phone.value);
+  
+    if (!emailIsValid) {
+      email.classList.add('invalid');
+      document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+    } else {
+      email.classList.remove('invalid');
+      document.getElementById('email-error').textContent = '';
+    }
+  
+    if (!phoneIsValid) {
+      phone.classList.add('invalid');
+      document.getElementById('phone-error').textContent = 'Please enter a valid phone number.';
+    } else {
+      phone.classList.remove('invalid');
+      document.getElementById('phone-error').textContent = '';
+    }
+  
+    if (emailIsValid && phoneIsValid) {
+      form.submit(); // submit form if all data is valid
+    }
+  });
+  
+  function isValidEmail(email) {
+    // use a regular expression to validate email format
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    return emailRegex.test(email);
+  }
+  
+  function isValidPhone(phone) {
+    // use a regular expression to validate phone format
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  }
+  
+  function notNull(input) {
+    // check that address is not empty
+    return input.trim() !== '';
+  }
+  
+  const inputs = form.querySelectorAll('input[data-required], select[data-required]');
+  
+  let formIsValid = true;
+  
+  inputs.forEach((input) => {
+    let s = input.nextElementSibling.className;
+    const errorElement = document.querySelector(`.${s}`);
+    if (input.value.trim() === '' || input.selectedIndex === 0) {
+      input.classList.add('invalid');
+      errorElement.textContent = 'This is a required field.';
+      formIsValid = false;
+    } else {
+      input.classList.remove('invalid');
+      errorElement.textContent = '';
+    }
+  });
+  
+  if (formIsValid) {
+    form.submit(); // submit form if all data is valid
+  }
+  
+</script>
+
+</body>
+</html>

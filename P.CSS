@@ -1,0 +1,398 @@
+* {
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: system-ui;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#ruler {
+    background-color: #40e0d0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ruler b {
+    font-size: 40px;
+    margin-top: 20px;
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+
+
+
+#container_gallery {
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#container_gallery img {
+    opacity: 80%;
+}
+
+#container_i {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    position: absolute;
+    margin-right: 44%;
+    width: 8%;
+    top: 95%;
+
+}
+
+#next:active,
+#prev:active {
+    color: red;
+}
+
+#container_i button {
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: large;
+}
+
+#hp_filter_container {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 80%;
+
+    display: flex;
+
+    height: 50px;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.dropdown_container {
+    width: 0;
+    flex: 1 0 0;
+    position: relative;
+}
+
+
+.dropdown_container button {
+    width: 100%;
+    background: #fff;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    display: none;
+    width: 100%;
+    background: #fff;
+}
+
+
+
+
+
+
+.dropdown_container.open .dropdown {
+    display: block
+}
+
+
+.dropdown_container label {
+    display: block;
+}
+
+#search,
+#clear {
+    background-color: #40e0d0;
+    text-align: center;
+}
+
+.filter_input {
+    display: none;
+}
+
+.dropdown input[type="radio"]+label::after {
+    content: "";
+    display: block;
+    border-bottom: 0.75px solid rgb(197 181 181);
+    margin-top: 5px;
+}
+
+
+#container_vacation {
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 146px;
+    row-gap: 50px;
+}
+
+.aaa {
+    width: 25%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1%;
+    text-align: center;
+}
+
+
+.img {
+    height: 75%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.img a {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    text-decoration: none;
+
+
+    color: black;
+
+}
+
+
+.private_page{
+    position: relative;
+    margin-right: 5%;
+}
+
+.private_page h1 {
+    width: 100%;
+    font-size: 60px;
+}
+
+.private_page img {
+    width: 45%;
+    position: absolute;
+    left: 10%;
+    bottom: -25%;
+}
+
+.private_page :nth-child(3) {
+    width: 25%;
+    font-size: 20px;
+
+}
+
+#backToHome {
+    color: black;
+    top: 10px;
+    right: 85%;
+    text-decoration: none;
+    position: relative;
+}
+
+
+#container_icons i {
+    font-size: 40px;
+    color: #40e0d0;
+}
+
+/*קונינר איקונים של עמוד פרטים על הנופש*/
+#container_icons {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 40%;
+    position: absolute;
+    margin-right: 5%;
+   margin-top: 100px;
+}
+
+#container_icons span {
+    margin-right: 30px;
+}
+
+
+
+.close {
+    opacity: 0;
+    position: fixed;
+
+}
+
+.stay_popup {
+    display: none;
+
+}
+
+.lll {
+    display: none;
+
+}
+
+/*הבאדי לא נגלל שפןפאפ כניסת מנהלים פתוח*/
+body.popup_open {
+    overflow: hidden;
+}
+
+/*מסך לבן-שקוף כשהפןפאפ כניסת מנהלים נפתח*/
+.popup_open:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 50%);
+    z-index: 1;
+}
+
+
+.popup_open #value_popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    
+}
+
+#popup {
+    margin-left: 30px;
+    color: white;
+    font-size: x-large;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+/*פופאפ כניסת מנהלים*/
+#value_popup {
+    width: 27%;
+    height: 260px;
+    background-color:  #40e0d0;
+    right: 30%;
+    margin-top: 200px;
+    opacity: 1;
+    z-index: 9999999;
+    position: fixed;
+    display: none;
+
+  
+}
+#input_password{
+    width: 40%;
+ 
+}
+#submit{
+    width: 20%;
+    margin-top: 2%;
+}
+#x{
+    width: 10%;
+  margin-right: 80%;
+  margin-top: 2%;
+  height: 10%;
+}
+
+#value_popup label{
+    font-size: x-large;
+     color: white;
+}
+
+
+
+
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: absolute;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+    height: 70%;
+    left: 5%;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+/*תיאור של הנופש*/
+.description {
+    width: 30%;
+}
+
+.row {
+    overflow: hidden;
+    height: 50px;
+}
+.mySlides{
+    height:150%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+/* html2 */
+a.backToHome{
+    color: black;
+    top: 10px;
+    right: 85%;
+    text-decoration: none;
+    position: relative;
+}
